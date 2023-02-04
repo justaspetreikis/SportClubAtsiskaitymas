@@ -11,14 +11,11 @@ namespace DBAtsiskaitymas.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public List<Trainer> Trainers { get; set; }
-        public List<Client> Clients { get; set; }
-
         public Sport(int id, string name)
         {
             Id = id;
             Name = name;
             Trainers = new List<Trainer>();
-            Clients = new List<Client>();
         }
     }
 }

@@ -38,7 +38,7 @@
             this.btnEditSport = new System.Windows.Forms.Button();
             this.btnClientsInfo = new System.Windows.Forms.Button();
             this.btnTrainersInfo = new System.Windows.Forms.Button();
-            this.btnSportsInfo = new System.Windows.Forms.Button();
+            this.btnTrainersClients = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,13 +54,14 @@
             // 
             // labelSportClubName
             // 
+            this.labelSportClubName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelSportClubName.Font = new System.Drawing.Font("Goudy Stout", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelSportClubName.ForeColor = System.Drawing.Color.Red;
-            this.labelSportClubName.Location = new System.Drawing.Point(3, 9);
+            this.labelSportClubName.Location = new System.Drawing.Point(110, 20);
             this.labelSportClubName.Name = "labelSportClubName";
-            this.labelSportClubName.Size = new System.Drawing.Size(967, 103);
+            this.labelSportClubName.Size = new System.Drawing.Size(795, 91);
             this.labelSportClubName.TabIndex = 0;
-            this.labelSportClubName.Text = "TONY GYM";
+            this.labelSportClubName.Text = "SPORT CLUB";
             this.labelSportClubName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnNewClient
@@ -72,9 +73,11 @@
             this.btnNewClient.TabIndex = 1;
             this.btnNewClient.Text = "New Client Register";
             this.btnNewClient.UseVisualStyleBackColor = true;
+            this.btnNewClient.Click += new System.EventHandler(this.btnNewClient_Click);
             // 
             // btnNewTrainer
             // 
+            this.btnNewTrainer.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnNewTrainer.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNewTrainer.Location = new System.Drawing.Point(12, 343);
             this.btnNewTrainer.Name = "btnNewTrainer";
@@ -82,9 +85,11 @@
             this.btnNewTrainer.TabIndex = 2;
             this.btnNewTrainer.Text = "New Trainer Register";
             this.btnNewTrainer.UseVisualStyleBackColor = true;
+            this.btnNewTrainer.Click += new System.EventHandler(this.btnNewTrainer_Click);
             // 
             // btnNewSport
             // 
+            this.btnNewSport.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnNewSport.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNewSport.Location = new System.Drawing.Point(12, 237);
             this.btnNewSport.Name = "btnNewSport";
@@ -92,9 +97,11 @@
             this.btnNewSport.TabIndex = 3;
             this.btnNewSport.Text = "Add New Sport";
             this.btnNewSport.UseVisualStyleBackColor = true;
+            this.btnNewSport.Click += new System.EventHandler(this.btnNewSport_Click);
             // 
             // btnEditClient
             // 
+            this.btnEditClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditClient.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEditClient.Location = new System.Drawing.Point(500, 131);
             this.btnEditClient.Name = "btnEditClient";
@@ -102,9 +109,11 @@
             this.btnEditClient.TabIndex = 4;
             this.btnEditClient.Text = "Edit Client";
             this.btnEditClient.UseVisualStyleBackColor = true;
+            this.btnEditClient.Click += new System.EventHandler(this.btnEditClient_Click);
             // 
             // btnEditTrainer
             // 
+            this.btnEditTrainer.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnEditTrainer.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEditTrainer.Location = new System.Drawing.Point(500, 343);
             this.btnEditTrainer.Name = "btnEditTrainer";
@@ -112,9 +121,11 @@
             this.btnEditTrainer.TabIndex = 5;
             this.btnEditTrainer.Text = "Edit Trainer";
             this.btnEditTrainer.UseVisualStyleBackColor = true;
+            this.btnEditTrainer.Click += new System.EventHandler(this.btnEditTrainer_Click);
             // 
             // btnEditSport
             // 
+            this.btnEditSport.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnEditSport.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEditSport.Location = new System.Drawing.Point(500, 237);
             this.btnEditSport.Name = "btnEditSport";
@@ -122,37 +133,46 @@
             this.btnEditSport.TabIndex = 6;
             this.btnEditSport.Text = "Edit Sport";
             this.btnEditSport.UseVisualStyleBackColor = true;
+            this.btnEditSport.Click += new System.EventHandler(this.btnEditSport_Click);
             // 
             // btnClientsInfo
             // 
+            this.btnClientsInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnClientsInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnClientsInfo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClientsInfo.Location = new System.Drawing.Point(12, 449);
             this.btnClientsInfo.Name = "btnClientsInfo";
             this.btnClientsInfo.Size = new System.Drawing.Size(315, 80);
             this.btnClientsInfo.TabIndex = 7;
             this.btnClientsInfo.Text = "Clients Info";
-            this.btnClientsInfo.UseVisualStyleBackColor = true;
+            this.btnClientsInfo.UseVisualStyleBackColor = false;
             this.btnClientsInfo.Click += new System.EventHandler(this.btnClientsInfo_Click);
             // 
             // btnTrainersInfo
             // 
+            this.btnTrainersInfo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnTrainersInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnTrainersInfo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTrainersInfo.Location = new System.Drawing.Point(333, 449);
+            this.btnTrainersInfo.Location = new System.Drawing.Point(334, 449);
             this.btnTrainersInfo.Name = "btnTrainersInfo";
             this.btnTrainersInfo.Size = new System.Drawing.Size(315, 80);
-            this.btnTrainersInfo.TabIndex = 8;
+            this.btnTrainersInfo.TabIndex = 9;
             this.btnTrainersInfo.Text = "Trainers Info";
-            this.btnTrainersInfo.UseVisualStyleBackColor = true;
+            this.btnTrainersInfo.UseVisualStyleBackColor = false;
+            this.btnTrainersInfo.Click += new System.EventHandler(this.btnTrainersInfo_Click);
             // 
-            // btnSportsInfo
+            // btnTrainersClients
             // 
-            this.btnSportsInfo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSportsInfo.Location = new System.Drawing.Point(655, 449);
-            this.btnSportsInfo.Name = "btnSportsInfo";
-            this.btnSportsInfo.Size = new System.Drawing.Size(315, 80);
-            this.btnSportsInfo.TabIndex = 9;
-            this.btnSportsInfo.Text = "Sports Info";
-            this.btnSportsInfo.UseVisualStyleBackColor = true;
+            this.btnTrainersClients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTrainersClients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnTrainersClients.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnTrainersClients.Location = new System.Drawing.Point(655, 449);
+            this.btnTrainersClients.Name = "btnTrainersClients";
+            this.btnTrainersClients.Size = new System.Drawing.Size(315, 80);
+            this.btnTrainersClients.TabIndex = 10;
+            this.btnTrainersClients.Text = "Clients by trainer";
+            this.btnTrainersClients.UseVisualStyleBackColor = false;
+            this.btnTrainersClients.Click += new System.EventHandler(this.btnTrainersClients_Click);
             // 
             // TonyGym
             // 
@@ -160,7 +180,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(982, 548);
-            this.Controls.Add(this.btnSportsInfo);
+            this.Controls.Add(this.btnTrainersClients);
             this.Controls.Add(this.btnTrainersInfo);
             this.Controls.Add(this.btnClientsInfo);
             this.Controls.Add(this.btnEditSport);
@@ -173,7 +193,6 @@
             this.Name = "TonyGym";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tony GYM";
-            this.Load += new System.EventHandler(this.TonyGym_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -191,6 +210,6 @@
         private Button btnEditSport;
         private Button btnClientsInfo;
         private Button btnTrainersInfo;
-        private Button btnSportsInfo;
+        private Button btnTrainersClients;
     }
 }

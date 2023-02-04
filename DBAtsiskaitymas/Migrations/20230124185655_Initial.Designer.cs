@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SportClub.Migrations
 {
     [DbContext(typeof(SportClubDBContext))]
-    [Migration("20230116193010_Initial")]
+    [Migration("20230124185655_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,12 +33,12 @@ namespace SportClub.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
+                    b.Property<long>("IdentificationNumber")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("SportId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Surname")
                         .IsRequired()
@@ -46,18 +46,13 @@ namespace SportClub.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SportId");
-
                     b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("DBAtsiskaitymas.Models.Sport", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -78,7 +73,7 @@ namespace SportClub.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SportId")
+                    b.Property<int?>("SportId")
                         .HasColumnType("int");
 
                     b.Property<string>("Surname")
@@ -107,20 +102,11 @@ namespace SportClub.Migrations
                     b.ToTable("TrainersClients");
                 });
 
-            modelBuilder.Entity("DBAtsiskaitymas.Models.Client", b =>
-                {
-                    b.HasOne("DBAtsiskaitymas.Models.Sport", null)
-                        .WithMany("Clients")
-                        .HasForeignKey("SportId");
-                });
-
             modelBuilder.Entity("DBAtsiskaitymas.Models.Trainer", b =>
                 {
                     b.HasOne("DBAtsiskaitymas.Models.Sport", null)
                         .WithMany("Trainers")
-                        .HasForeignKey("SportId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SportId");
                 });
 
             modelBuilder.Entity("DBAtsiskaitymas.Models.TrainerClient", b =>
@@ -149,8 +135,6 @@ namespace SportClub.Migrations
 
             modelBuilder.Entity("DBAtsiskaitymas.Models.Sport", b =>
                 {
-                    b.Navigation("Clients");
-
                     b.Navigation("Trainers");
                 });
 

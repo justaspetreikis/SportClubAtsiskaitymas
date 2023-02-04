@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,9 @@ namespace DBAtsiskaitymas.Models
 
             modelBuilder.Entity<Trainer>().HasMany(x => x.TrainersClients).WithOne(x => x.Trainer).HasForeignKey(x => x.TrainersId);
             modelBuilder.Entity<Client>().HasMany(x => x.TrainersClients).WithOne(x => x.Client).HasForeignKey(x => x.ClientsId);
+
+            modelBuilder.Entity<Sport>().Property(x => x.Id).ValueGeneratedNever();
+
         }
     }
 }
