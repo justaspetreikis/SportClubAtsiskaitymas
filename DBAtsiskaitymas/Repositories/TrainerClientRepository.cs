@@ -7,7 +7,6 @@ namespace SportClub.Repositories
         public List<TrainerClient> AllTrainersClients { get; set; }
         public TrainerClientRepository()
         {
-            AllTrainersClients = new List<TrainerClient>();
             using (var context = new SportClubDBContext())
             {
                 AllTrainersClients = context.TrainersClients.ToList<TrainerClient>();

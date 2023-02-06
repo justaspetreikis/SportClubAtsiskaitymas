@@ -7,12 +7,11 @@ namespace SportClub.Repositories
         public List<Sport> AllSports { get; set; }
         public SportsRepository()
         {
-            AllSports = new List<Sport>();
             using (var context = new SportClubDBContext())
             {
                 AllSports = context.Sports.ToList<Sport>();
             }
-                
+             
         }
         public List<Sport> GetAllSports()
         {
@@ -45,7 +44,6 @@ namespace SportClub.Repositories
             }
 
         }
-
         public int NextSportId()
         {
             return (AllSports.Count + 1);

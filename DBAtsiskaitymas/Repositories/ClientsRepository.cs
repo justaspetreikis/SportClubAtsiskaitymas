@@ -7,10 +7,8 @@ namespace SportClub.Repositories
         public List<Client> AllCLients { get; set; }
         public ClientsRepository()
         {
-            AllCLients = new List<Client>();
             using var context = new SportClubDBContext();
             AllCLients = context.Clients.ToList<Client>();
-
         }
         public List<Client> GetAllClients()
         {
