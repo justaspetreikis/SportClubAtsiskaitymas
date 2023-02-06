@@ -1,15 +1,6 @@
 ﻿using DBAtsiskaitymas;
 using SportClub.Repositories;
 using SportClub.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SportClub.Forms
 {
@@ -22,6 +13,15 @@ namespace SportClub.Forms
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            var sportsRepository =  new SportsRepository();
+            var existingSport =sportsRepository.GetAllSports()
+                .FirstOrDefault(x => x.Name == tbName.Text);
+            if (existingSport != null)
+            {
+                MessageBox.Show("Sport with this name already exist");
+                return;
+            }
+
             var newSport = new SportService();
             newSport.RegisterNewSport(new SportsRepository().NextSportId(), tbName.Text);
 
@@ -38,7 +38,6 @@ namespace SportClub.Forms
             }
            
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             var tonyGym = new TonyGym();

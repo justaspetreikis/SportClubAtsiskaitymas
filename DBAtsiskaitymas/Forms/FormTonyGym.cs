@@ -1,6 +1,4 @@
 using SportClub.Forms;
-using System.Diagnostics;
-using System.Windows.Forms;
 
 namespace DBAtsiskaitymas
 {

@@ -138,6 +138,5 @@
         private ComboBox cbSelectTrainer;
         private Label lbTrainersSport;
         private Button btnAddTrainer;
-        private CheckBox checkBox1;
     }
 }

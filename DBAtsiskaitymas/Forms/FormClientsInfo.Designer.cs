@@ -34,12 +34,12 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnShowAllClients = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.identificationNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -98,14 +98,11 @@
             this.dataGridView.DataSource = this.clientBindingSource;
             this.dataGridView.Location = new System.Drawing.Point(12, 140);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 29;
             this.dataGridView.Size = new System.Drawing.Size(958, 326);
             this.dataGridView.TabIndex = 28;
-            // 
-            // clientBindingSource
-            // 
-            this.clientBindingSource.DataSource = typeof(DBAtsiskaitymas.Models.Client);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -113,6 +110,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 290;
             // 
             // nameDataGridViewTextBoxColumn
@@ -121,6 +119,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // surnameDataGridViewTextBoxColumn
@@ -129,6 +128,7 @@
             this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
             this.surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
             this.surnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // identificationNumberDataGridViewTextBoxColumn
@@ -137,6 +137,7 @@
             this.identificationNumberDataGridViewTextBoxColumn.HeaderText = "IdentificationNumber";
             this.identificationNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.identificationNumberDataGridViewTextBoxColumn.Name = "identificationNumberDataGridViewTextBoxColumn";
+            this.identificationNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.identificationNumberDataGridViewTextBoxColumn.Width = 180;
             // 
             // createdDataGridViewTextBoxColumn
@@ -145,7 +146,12 @@
             this.createdDataGridViewTextBoxColumn.HeaderText = "Created";
             this.createdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.createdDataGridViewTextBoxColumn.Name = "createdDataGridViewTextBoxColumn";
+            this.createdDataGridViewTextBoxColumn.ReadOnly = true;
             this.createdDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataSource = typeof(DBAtsiskaitymas.Models.Client);
             // 
             // FormClientsInfo
             // 

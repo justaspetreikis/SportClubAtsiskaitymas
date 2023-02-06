@@ -1,12 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DBAtsiskaitymas.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace DBAtsiskaitymas.Models
+namespace SportClub.Repositories
 {
     public class SportClubDBContext : DbContext
     {

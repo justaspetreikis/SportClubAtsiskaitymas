@@ -1,15 +1,6 @@
 ﻿using DBAtsiskaitymas;
 using SportClub.Repositories;
 using SportClub.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SportClub.Forms
 {
@@ -60,6 +51,16 @@ namespace SportClub.Forms
             var clientRepository = new ClientsRepository();
             var trainersClientsService = new TrainersClientsService();
             var trainerRepository = new TrainersRepository();
+
+            var existingTrainersClients = new TrainerClientRepository().GetAllTrainersClients()
+                .FirstOrDefault(x => x.TrainersId == trainerRepository.GetTrainersId(cbSelectTrainer.Text)
+                && x.ClientsId == clientRepository.GetClientId(cbSelectClient.Text));
+
+            if (existingTrainersClients != null)
+            {
+                MessageBox.Show("Client already training with this Trainer");
+                return;
+            }
 
             trainersClientsService.AddClientToTrainer(trainerRepository.GetTrainersId(cbSelectTrainer.Text),
                                                       clientRepository.GetClientId(cbSelectClient.Text));

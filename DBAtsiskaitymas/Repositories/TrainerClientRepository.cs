@@ -1,10 +1,4 @@
 ﻿using DBAtsiskaitymas.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SportClub.Repositories
 {
@@ -16,8 +10,12 @@ namespace SportClub.Repositories
             AllTrainersClients = new List<TrainerClient>();
             using (var context = new SportClubDBContext())
             {
-                AllTrainersClients = context.TrainersClients.FromSqlRaw($"SELECT * FROM TrainersClients").ToList<TrainerClient>();
+                AllTrainersClients = context.TrainersClients.ToList<TrainerClient>();
             }
+        }
+        public List<TrainerClient> GetAllTrainersClients()
+        {
+            return AllTrainersClients;
         }
     }
 }
